@@ -3,7 +3,7 @@ package com.gbsoft.nilo.rest;
 import com.gbsoft.nilo.repository.entity.EntityBase;
 import com.gbsoft.nilo.repository.entity.Identifiable;
 import com.gbsoft.nilo.rest.dto.DtoBase;
-import com.gbsoft.nilo.rest.mapper.MapperBase;
+import com.gbsoft.nilo.rest.mapper.Mapper;
 import com.gbsoft.nilo.service.ServiceBase;
 import com.gbsoft.nilo.service.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,10 +20,10 @@ public abstract class ControllerBase<IO extends DtoBase<?>, E extends EntityBase
 
     private final Logger LOGGER;
     private final ServiceBase<E> service;
-    private final MapperBase<IO, E> mapper;
+    private final Mapper<IO, E> mapper;
 
     @Autowired
-    public ControllerBase(final ServiceBase<E> service, final MapperBase<IO, E> mapper, final String clazz) {
+    public ControllerBase(final ServiceBase<E> service, final Mapper<IO, E> mapper, final String clazz) {
         this.LOGGER = Logger.getLogger(clazz);
         this.service = service;
         this.mapper = mapper;

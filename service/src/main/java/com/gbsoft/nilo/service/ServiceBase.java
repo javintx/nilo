@@ -1,6 +1,6 @@
 package com.gbsoft.nilo.service;
 
-import com.gbsoft.nilo.repository.RepositoryBase;
+import com.gbsoft.nilo.repository.NiloRepository;
 import com.gbsoft.nilo.repository.entity.EntityBase;
 import com.gbsoft.nilo.repository.entity.Identifiable;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +12,10 @@ import java.util.logging.Logger;
 public abstract class ServiceBase<E extends EntityBase<?>> {
 
     private final Logger LOGGER;
-    private final RepositoryBase<?, E> repository;
+    private final NiloRepository<E> repository;
 
     @Autowired
-    public ServiceBase(final RepositoryBase<?, E> repository, final String clazz) {
+    public ServiceBase(final NiloRepository<E> repository, final String clazz) {
         this.LOGGER = Logger.getLogger(clazz);
         this.repository = repository;
     }

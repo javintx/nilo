@@ -1,3 +1,5 @@
 rootProject.name = 'nilo'
 include 'repository'
+include 'service'
+include 'rest'
 

@@ -2,9 +2,7 @@ package com.gbsoft.nilo.repository;
 
 import com.gbsoft.nilo.repository.entity.EntityBase;
 import com.gbsoft.nilo.repository.entity.Identifiable;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
-import java.io.Serializable;
-
-public abstract class RepositoryBase<D extends Serializable, E extends EntityBase<D>> implements JpaRepository<E, Identifiable<?>> {
+public interface RepositoryBase<I extends Identifiable<?>, E extends EntityBase<?>> extends NiloRepository<E>, CrudRepository<E, I> {
 }
