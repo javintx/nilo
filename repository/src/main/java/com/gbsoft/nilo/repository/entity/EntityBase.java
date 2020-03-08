@@ -2,5 +2,5 @@ package com.gbsoft.nilo.repository.entity;
 
 import java.io.Serializable;
 
-public abstract class EntityBase<I extends Serializable> implements Serializable, Identifiable<I> {
+public abstract class EntityBase<S extends Serializable> implements Serializable, Identifiable<S> {
 }

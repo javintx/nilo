@@ -1,2 +1,2 @@
-# nilo
+# com.gbsoft.nilo
 NILO Project

@@ -6,7 +6,7 @@ import com.gbsoft.nilo.repository.entity.Identifiable;
 import java.util.Optional;
 
 public interface NiloRepository<E extends EntityBase<?>> {
-    <S extends E> S save(S entity);
+    <S extends E> S save(E entity);
 
     Optional<E> findById(Identifiable<?> i);
 

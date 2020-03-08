@@ -1,12 +1,3 @@
-//plugins {
-//    id 'org.springframework.boot'
-//    id 'io.spring.dependency-management'
-//    id 'java'
-//}
-//
-//group = 'com.gbsoft.nilo'
-//version = '0.0.1-SNAPSHOT'
-//sourceCompatibility = '13'
 
 dependencies {
     implementation project (':repository')

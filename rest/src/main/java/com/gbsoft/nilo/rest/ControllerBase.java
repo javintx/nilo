@@ -4,6 +4,7 @@ import com.gbsoft.nilo.repository.entity.EntityBase;
 import com.gbsoft.nilo.repository.entity.Identifiable;
 import com.gbsoft.nilo.rest.dto.DtoBase;
 import com.gbsoft.nilo.rest.mapper.Mapper;
+import com.gbsoft.nilo.rest.mapper.MapperException;
 import com.gbsoft.nilo.service.ServiceBase;
 import com.gbsoft.nilo.service.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +33,12 @@ public abstract class ControllerBase<IO extends DtoBase<?>, E extends EntityBase
     @PostMapping
     public IO create(final IO in) throws RestException {
         LOGGER.entering(this.getClass().getName(), "create", in);
-        return mapper.dto(service.create(mapper.entity(in)));
+        try {
+            return mapper.dto(service.create(mapper.entity(in)));
+        } catch (MapperException e) {
+            LOGGER.throwing(this.getClass().getName(), "create", e);
+            throw new RestException(e);
+        }
     }
 
     @GetMapping
@@ -40,7 +46,7 @@ public abstract class ControllerBase<IO extends DtoBase<?>, E extends EntityBase
         LOGGER.entering(this.getClass().getName(), "read", id);
         try {
             return mapper.dto(service.read(id));
-        } catch (ServiceException e) {
+        } catch (ServiceException | MapperException e) {
             LOGGER.throwing(this.getClass().getName(), "read", e);
             throw new RestException(e.getMessage());
         }
@@ -49,12 +55,22 @@ public abstract class ControllerBase<IO extends DtoBase<?>, E extends EntityBase
     @PutMapping
     public IO update(final IO in) throws RestException {
         LOGGER.entering(this.getClass().getName(), "update", in);
-        return mapper.dto(service.update(mapper.entity(in)));
+        try {
+            return mapper.dto(service.update(mapper.entity(in)));
+        } catch (MapperException e) {
+            LOGGER.throwing(this.getClass().getName(), "update", e);
+            throw new RestException(e);
+        }
     }
 
     @DeleteMapping
     public void delete(final IO in) throws RestException {
         LOGGER.entering(this.getClass().getName(), "read", in);
-        service.delete(mapper.entity(in));
+        try {
+            service.delete(mapper.entity(in));
+        } catch (MapperException e) {
+            LOGGER.throwing(this.getClass().getName(), "delete", e);
+            throw new RestException(e);
+        }
     }
 }
