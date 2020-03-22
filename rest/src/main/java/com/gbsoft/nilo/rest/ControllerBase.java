@@ -14,10 +14,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.Serializable;
 import java.util.logging.Logger;
 
 @RestController
-public abstract class ControllerBase<IO extends DtoBase<?>, E extends EntityBase<?>> {
+public abstract class ControllerBase<IO extends DtoBase<? extends Serializable>, E extends EntityBase<? extends Serializable>> {
 
     private final Logger LOGGER;
     private final ServiceBase<E> service;

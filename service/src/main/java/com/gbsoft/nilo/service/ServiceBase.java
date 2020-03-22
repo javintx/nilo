@@ -6,10 +6,11 @@ import com.gbsoft.nilo.repository.entity.Identifiable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.Serializable;
 import java.util.logging.Logger;
 
 @Service
-public abstract class ServiceBase<E extends EntityBase<?>> {
+public abstract class ServiceBase<E extends EntityBase<? extends Serializable>> {
 
     private final Logger LOGGER;
     private final NiloRepository<E> repository;
@@ -25,7 +26,7 @@ public abstract class ServiceBase<E extends EntityBase<?>> {
         return repository.save(in);
     }
 
-    public E read(final Identifiable<?> id) throws ServiceException {
+    public E read(final Identifiable<? extends Serializable> id) throws ServiceException {
         LOGGER.entering(this.getClass().getName(), "read", id);
         return repository.findById(id).orElseThrow(() -> new ServiceException(String.format("Entity with id %s not found", id.getId())));
     }

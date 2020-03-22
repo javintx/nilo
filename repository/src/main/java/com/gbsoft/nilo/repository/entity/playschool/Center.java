@@ -1,14 +1,15 @@
-package com.gbsoft.nilo.repository.entity;
+package com.gbsoft.nilo.repository.entity.playschool;
 
+import com.gbsoft.nilo.repository.entity.EntityBase;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import java.util.Collection;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class Center extends EntityBase<String> {
-    @Column
-    private String uid;
     @Column
     private String name;
     @Column
@@ -16,11 +17,5 @@ public class Center extends EntityBase<String> {
 
     private Collection<Teacher> teachers;
 
-    private Collection<Clazz> clazzes;
-
-    @Override
-    public String getId() {
-        return uid;
-    }
-
+    private Collection<Classroom> classrooms;
 }

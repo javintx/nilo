@@ -4,5 +4,7 @@ import com.gbsoft.nilo.repository.entity.EntityBase;
 import com.gbsoft.nilo.repository.entity.Identifiable;
 import org.springframework.data.repository.CrudRepository;
 
-public interface RepositoryBase<I extends Identifiable<?>, E extends EntityBase<?>> extends NiloRepository<E>, CrudRepository<E, I> {
+import java.io.Serializable;
+
+public interface RepositoryBase<I extends Identifiable<? extends Serializable>, E extends EntityBase<? extends Serializable>> extends NiloRepository<E>, CrudRepository<E, I> {
 }
