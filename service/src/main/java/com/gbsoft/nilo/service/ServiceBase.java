@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
+import java.util.Optional;
 import java.util.logging.Logger;
 
 @Service
@@ -26,13 +27,14 @@ public abstract class ServiceBase<E extends EntityBase<? extends Serializable>> 
         return repository.save(in);
     }
 
-    public E read(final Identifiable<? extends Serializable> id) throws ServiceException {
+    public Optional<E> read(final Identifiable<? extends Serializable> id) {
         LOGGER.entering(this.getClass().getName(), "read", id);
-        return repository.findById(id).orElseThrow(() -> new ServiceException(String.format("Entity with id %s not found", id.getId())));
+        return repository.findById(id);
     }
 
     public E update(final E in) {
         LOGGER.entering(this.getClass().getName(), "update", in);
+        // TODO: Add update logic
         return repository.save(in);
     }
 

@@ -6,7 +6,6 @@ import com.gbsoft.nilo.rest.dto.DtoBase;
 import com.gbsoft.nilo.rest.mapper.Mapper;
 import com.gbsoft.nilo.rest.mapper.MapperException;
 import com.gbsoft.nilo.service.ServiceBase;
-import com.gbsoft.nilo.service.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -46,8 +45,8 @@ public abstract class ControllerBase<IO extends DtoBase<? extends Serializable>,
     public IO read(final Identifiable<?> id) throws RestException {
         LOGGER.entering(this.getClass().getName(), "read", id);
         try {
-            return mapper.dto(service.read(id));
-        } catch (ServiceException | MapperException e) {
+            return mapper.dto(service.read(id).orElseThrow(() -> new RestException(String.format("Entity with id %s not found", id.getId()))));
+        } catch (MapperException e) {
             LOGGER.throwing(this.getClass().getName(), "read", e);
             throw new RestException(e.getMessage());
         }
