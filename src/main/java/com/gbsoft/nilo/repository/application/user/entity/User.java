@@ -1,14 +1,15 @@
 package com.gbsoft.nilo.repository.application.user.entity;
 
+import com.gbsoft.nilo.repository.application.language.entity.Language;
+import com.gbsoft.nilo.repository.entity.EntityBase;
 import com.gbsoft.nilo.service.audit.events.Auditable;
 import com.gbsoft.nilo.service.audit.events.Audited;
-import com.gbsoft.nilo.repository.entity.EntityBase;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import com.gbsoft.nilo.repository.application.language.entity.Language;
 
 import javax.persistence.Column;
 import javax.persistence.Embedded;
+import javax.persistence.ManyToOne;
 import java.util.Calendar;
 
 @EqualsAndHashCode(callSuper = true)
@@ -27,7 +28,7 @@ public abstract class User extends EntityBase<String> implements Auditable {
     @Column
     private Calendar deletion;
     @Audited
-    @Column
+    @ManyToOne
     private Language language;
     @Embedded
     private UserContactInformation contactInformation;

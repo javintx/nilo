@@ -1,11 +1,10 @@
 package com.gbsoft.nilo.repository.playschool.entity;
 
 import com.gbsoft.nilo.repository.application.user.entity.User;
+import com.gbsoft.nilo.repository.application.user.entity.UserType;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import com.gbsoft.nilo.repository.application.user.entity.UserType;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import java.util.Collection;

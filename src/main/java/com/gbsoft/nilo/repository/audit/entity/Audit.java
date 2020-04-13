@@ -21,7 +21,7 @@ public class Audit extends EntityBase<String> {
     @Column
     private String originator;
     @Column
-    private String from;
+    private String original;
     @Column
-    private String to;
+    private String modified;
 }

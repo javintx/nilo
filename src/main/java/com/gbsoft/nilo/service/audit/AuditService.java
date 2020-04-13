@@ -2,8 +2,8 @@ package com.gbsoft.nilo.service.audit;
 
 import com.gbsoft.nilo.repository.audit.entity.Audit;
 import com.gbsoft.nilo.repository.entity.Identifiable;
-import com.gbsoft.nilo.service.audit.events.AuditEvent;
 import com.gbsoft.nilo.service.ServiceBase;
+import com.gbsoft.nilo.service.audit.events.AuditEvent;
 import org.springframework.stereotype.Service;
 
 @Service

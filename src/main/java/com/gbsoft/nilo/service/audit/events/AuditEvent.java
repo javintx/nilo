@@ -21,8 +21,8 @@ public abstract class AuditEvent {
         Audit audit = new Audit();
         audit.setType(getType());
         audit.setOriginator(originator);
-        audit.setFrom(getInitialAuditInfo());
-        audit.setTo(getModifiedAuditInfo());
+        audit.setOriginal(getInitialAuditInfo());
+        audit.setModified(getModifiedAuditInfo());
         return new Audit();
     }
 
