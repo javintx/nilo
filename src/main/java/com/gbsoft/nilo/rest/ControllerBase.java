@@ -3,7 +3,7 @@ package com.gbsoft.nilo.rest;
 import com.gbsoft.nilo.repository.entity.EntityBase;
 import com.gbsoft.nilo.repository.entity.Identifiable;
 import com.gbsoft.nilo.rest.dto.DtoBase;
-import com.gbsoft.nilo.rest.mapper.Mapper;
+import com.gbsoft.nilo.rest.mapper.MapperBase;
 import com.gbsoft.nilo.rest.mapper.MapperException;
 import com.gbsoft.nilo.service.ServiceBase;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public abstract class ControllerBase<IO extends DtoBase<?>, E extends EntityBase
     @Autowired
     private ServiceBase<E, I> service;
     @Autowired
-    private Mapper<IO, E> mapper;
+    private MapperBase<IO, E> mapper;
 
     @GetMapping("/")
     public Page<IO> all(Pageable pageable) throws RestException {
