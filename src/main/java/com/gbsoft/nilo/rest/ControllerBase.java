@@ -29,7 +29,9 @@ public abstract class ControllerBase<IO extends DtoBase<?>, E extends EntityBase
     public Page<IO> all(Pageable pageable) throws RestException {
         LOGGER.entering(this.getClass().getName(), "all", pageable);
         // TODO: Pending to transform pageable from E to IO
-        //return service.all(pageable);
+        /*Page<E> es = service.all(pageable);
+        List<IO> ios = es.get().collect(e -> mapper.dto(e));
+        return new PageImpl<IO>(ios);*/
         return null;
     }
 
