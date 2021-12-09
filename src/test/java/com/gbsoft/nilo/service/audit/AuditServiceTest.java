@@ -1,7 +1,7 @@
 package com.gbsoft.nilo.service.audit;
 
-import com.gbsoft.nilo.repository.audit.entity.Audit;
-import com.gbsoft.nilo.repository.audit.entity.AuditType;
+import com.gbsoft.nilo.audit.entity.Audit;
+import com.gbsoft.nilo.audit.entity.AuditType;
 import com.gbsoft.nilo.repository.entity.Identifiable;
 import com.gbsoft.nilo.service.ServiceBase;
 import com.gbsoft.nilo.service.ServiceBaseTest;
