@@ -1,7 +1,7 @@
 package com.gbsoft.nilo.application.user.mapper;
 
 import com.gbsoft.nilo.application.user.dto.UserDto;
-import com.gbsoft.nilo.application.user.entity.User;
+import com.gbsoft.nilo.domain.application.user.User;
 import com.gbsoft.nilo.mapper.MapperBase;
 import com.gbsoft.nilo.mapper.MapperException;
 

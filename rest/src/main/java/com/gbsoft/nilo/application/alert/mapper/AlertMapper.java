@@ -1,7 +1,7 @@
 package com.gbsoft.nilo.application.alert.mapper;
 
 import com.gbsoft.nilo.application.alert.dto.AlertDto;
-import com.gbsoft.nilo.application.alert.entity.Alert;
+import com.gbsoft.nilo.domain.application.alert.Alert;
 import com.gbsoft.nilo.mapper.MapperBase;
 import com.gbsoft.nilo.mapper.MapperException;
 import org.springframework.stereotype.Component;

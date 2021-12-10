@@ -1,7 +1,7 @@
 package com.gbsoft.nilo.consumer.mapper;
 
 import com.gbsoft.nilo.consumer.dto.KidDto;
-import com.gbsoft.nilo.consumer.entity.Kid;
+import com.gbsoft.nilo.domain.consumer.Kid;
 import com.gbsoft.nilo.mapper.MapperBase;
 import com.gbsoft.nilo.mapper.MapperException;
 import org.springframework.stereotype.Component;

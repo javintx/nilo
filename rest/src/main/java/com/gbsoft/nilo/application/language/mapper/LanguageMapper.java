@@ -1,7 +1,7 @@
 package com.gbsoft.nilo.application.language.mapper;
 
 import com.gbsoft.nilo.application.language.dto.LanguageDto;
-import com.gbsoft.nilo.application.language.entity.Language;
+import com.gbsoft.nilo.domain.application.language.Language;
 import com.gbsoft.nilo.mapper.MapperBase;
 import com.gbsoft.nilo.mapper.MapperException;
 import org.springframework.stereotype.Component;

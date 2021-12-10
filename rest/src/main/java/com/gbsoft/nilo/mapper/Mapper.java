@@ -1,7 +1,7 @@
 package com.gbsoft.nilo.mapper;
 
+import com.gbsoft.nilo.domain.entity.EntityBase;
 import com.gbsoft.nilo.dto.DtoBase;
-import com.gbsoft.nilo.repository.entity.EntityBase;
 
 import java.io.Serializable;
 

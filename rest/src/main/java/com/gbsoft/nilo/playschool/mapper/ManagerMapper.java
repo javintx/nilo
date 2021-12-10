@@ -1,9 +1,9 @@
 package com.gbsoft.nilo.playschool.mapper;
 
 import com.gbsoft.nilo.application.user.mapper.UserMapper;
+import com.gbsoft.nilo.domain.playschool.Manager;
 import com.gbsoft.nilo.mapper.MapperException;
 import com.gbsoft.nilo.playschool.dto.ManagerDto;
-import com.gbsoft.nilo.playschool.entity.Manager;
 import org.springframework.stereotype.Component;
 
 @Component

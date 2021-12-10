@@ -1,6 +1,6 @@
 package com.gbsoft.nilo.dto;
 
-import com.gbsoft.nilo.repository.entity.Identifiable;
+import com.gbsoft.nilo.domain.entity.Identifiable;
 
 import java.io.Serializable;
 
