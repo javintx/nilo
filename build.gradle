@@ -1,11 +1,24 @@
 plugins {
-    id "io.spring.dependency-management" version "1.0.10.RELEASE"
+    id "io.spring.dependency-management" version "1.0.11.RELEASE"
     id "java-library"
     id "org.sonarqube" version "3.3"
+    id "org.springframework.boot" version "2.6.1"
 }
 
 wrapper {
     gradleVersion = "7.3.1"
+}
+
+dependencies {
+    implementation project(":app")
+    implementation project(":core")
+    implementation project(":persistence")
+    implementation project(":rest")
+    implementation project(":shared")
+}
+
+springBoot {
+    mainClass = "com.gbsoft.nilo.NiloProjectApplication"
 }
 
 repositories {
@@ -42,7 +55,6 @@ allprojects {
 
 subprojects {
     apply plugin: "java"
-    apply plugin: 'io.spring.dependency-management'
 
     java {
         toolchain {
@@ -50,16 +62,8 @@ subprojects {
         }
     }
 
-    dependencyManagement {
-        imports {
-            mavenBom('org.springframework.boot:spring-boot-dependencies:2.4.1')
-        }
-    }
-
     test {
         useJUnitPlatform()
-        // systemProperty "de.adesso.junitinsights.enabled", "true"
-
     }
 }
 
