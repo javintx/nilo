@@ -6,7 +6,6 @@ import com.gbsoft.nilo.dto.DtoBase;
 import com.gbsoft.nilo.mapper.MapperBase;
 import com.gbsoft.nilo.mapper.MapperException;
 import com.gbsoft.nilo.service.ServiceBase;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,14 +15,17 @@ import java.util.logging.Logger;
 
 public abstract class ControllerBase<IO extends DtoBase<?>, E extends EntityBase<?>, I extends Identifiable<?>> {
 
-    @Autowired
-    private Logger LOGGER;
-    @Autowired
-    private ServiceBase<E, I> service;
-    @Autowired
-    private MapperBase<IO, E> mapper;
+    private final Logger LOGGER;
+    private final ServiceBase<E, I> service;
+    private final MapperBase<IO, E> mapper;
 
-//    @GetMapping("/")
+    public ControllerBase(Logger LOGGER, ServiceBase<E, I> service, MapperBase<IO, E> mapper) {
+        this.LOGGER = LOGGER;
+        this.service = service;
+        this.mapper = mapper;
+    }
+
+    //    @GetMapping("/")
 //    public Page<IO> all(Pageable pageable) throws RestException {
 //        LOGGER.entering(this.getClass().getName(), "all", pageable);
 //        // TODO: Pending to transform pageable from E to IO

@@ -8,7 +8,7 @@ import com.gbsoft.nilo.service.port.out.ReadRepositoryBase;
 import com.gbsoft.nilo.service.port.out.WriteRepositoryBase;
 
 public class CenterService extends ServiceBase<Center, Identifiable<String>> {
-    protected CenterService(ReadRepositoryBase<Center, Identifiable<String>> readRepository, WriteRepositoryBase<Center, Identifiable<String>> writeRepository, AuditService auditService) {
+    public CenterService(ReadRepositoryBase<Center, Identifiable<String>> readRepository, WriteRepositoryBase<Center, Identifiable<String>> writeRepository, AuditService auditService) {
         super(CenterService.class.getName(), readRepository, writeRepository, auditService);
     }
 }

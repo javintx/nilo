@@ -1,6 +1,5 @@
 rootProject.name = "nilo"
 include "core"
-include "shared"
 include "persistence"
 include "rest"
 include "app"

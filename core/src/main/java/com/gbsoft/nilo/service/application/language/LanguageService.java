@@ -8,7 +8,7 @@ import com.gbsoft.nilo.service.port.out.ReadRepositoryBase;
 import com.gbsoft.nilo.service.port.out.WriteRepositoryBase;
 
 public class LanguageService extends ServiceBase<Language, Identifiable<String>> {
-    LanguageService(ReadRepositoryBase<Language, Identifiable<String>> readRepository, WriteRepositoryBase<Language, Identifiable<String>> writeRepository, AuditService auditService) {
+    public LanguageService(ReadRepositoryBase<Language, Identifiable<String>> readRepository, WriteRepositoryBase<Language, Identifiable<String>> writeRepository, AuditService auditService) {
         super(LanguageService.class.getName(), readRepository, writeRepository, auditService);
     }
 }

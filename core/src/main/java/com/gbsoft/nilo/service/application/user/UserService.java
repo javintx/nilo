@@ -8,7 +8,7 @@ import com.gbsoft.nilo.service.port.out.ReadRepositoryBase;
 import com.gbsoft.nilo.service.port.out.WriteRepositoryBase;
 
 public abstract class UserService<U extends User, I extends Identifiable<?>> extends ServiceBase<U, I> {
-    protected UserService(String logger, ReadRepositoryBase<U, I> readRepository, WriteRepositoryBase<U, I> writeRepository, AuditService auditService) {
+    public UserService(String logger, ReadRepositoryBase<U, I> readRepository, WriteRepositoryBase<U, I> writeRepository, AuditService auditService) {
         super(logger, readRepository, writeRepository, auditService);
     }
 }

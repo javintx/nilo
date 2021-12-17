@@ -8,7 +8,7 @@ import com.gbsoft.nilo.service.port.out.ReadRepositoryBase;
 import com.gbsoft.nilo.service.port.out.WriteRepositoryBase;
 
 public class ManagerService extends UserService<Manager, Identifiable<String>> {
-    protected ManagerService(ReadRepositoryBase<Manager, Identifiable<String>> readRepository, WriteRepositoryBase<Manager, Identifiable<String>> writeRepository, AuditService auditService) {
+    public ManagerService(ReadRepositoryBase<Manager, Identifiable<String>> readRepository, WriteRepositoryBase<Manager, Identifiable<String>> writeRepository, AuditService auditService) {
         super(ManagerService.class.getName(), readRepository, writeRepository, auditService);
     }
 }

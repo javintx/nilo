@@ -8,7 +8,7 @@ import com.gbsoft.nilo.service.port.out.ReadRepositoryBase;
 import com.gbsoft.nilo.service.port.out.WriteRepositoryBase;
 
 public class KidService extends ServiceBase<Kid, Identifiable<String>> {
-    protected KidService(ReadRepositoryBase<Kid, Identifiable<String>> readRepository, WriteRepositoryBase<Kid, Identifiable<String>> writeRepository, AuditService auditService) {
+    public KidService(ReadRepositoryBase<Kid, Identifiable<String>> readRepository, WriteRepositoryBase<Kid, Identifiable<String>> writeRepository, AuditService auditService) {
         super(KidService.class.getName(), readRepository, writeRepository, auditService);
     }
 }

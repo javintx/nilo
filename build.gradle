@@ -14,7 +14,6 @@ dependencies {
     implementation project(":core")
     implementation project(":persistence")
     implementation project(":rest")
-    implementation project(":shared")
 }
 
 springBoot {
@@ -27,22 +26,6 @@ repositories {
 
 group = "com.gbsoft.nilo"
 version = "0.0.1-SNAPSHOT"
-
-//dependencies {
-//    implementation "org.springframework.boot:spring-boot-starter"
-//    implementation "org.springframework.boot:spring-boot-starter-data-jpa"
-//    implementation "org.springframework.boot:spring-boot-starter-web"
-//    implementation "org.springframework.boot:spring-boot-starter-security"
-//    implementation "org.springframework.boot:spring-boot-starter-thymeleaf"
-//
-//    runtimeOnly "com.h2database:h2"
-//
-//    testRuntimeOnly group: "com.h2database", name: "h2", version: "1.4.200"
-//
-//    testImplementation "org.springframework.boot:spring-boot-starter-test"
-//    testImplementation "org.springframework.security:spring-security-test"
-//    //testImplementation "org.springframework.boot:spring-boot-starter-security-test"
-//}
 
 allprojects {
     group "com.gbsoft.nilo"

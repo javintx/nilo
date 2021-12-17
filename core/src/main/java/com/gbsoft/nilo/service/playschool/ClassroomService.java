@@ -8,7 +8,7 @@ import com.gbsoft.nilo.service.port.out.ReadRepositoryBase;
 import com.gbsoft.nilo.service.port.out.WriteRepositoryBase;
 
 public class ClassroomService extends ServiceBase<Classroom, Identifiable<String>> {
-    protected ClassroomService(ReadRepositoryBase<Classroom, Identifiable<String>> readRepository, WriteRepositoryBase<Classroom, Identifiable<String>> writeRepository, AuditService auditService) {
+    public ClassroomService(ReadRepositoryBase<Classroom, Identifiable<String>> readRepository, WriteRepositoryBase<Classroom, Identifiable<String>> writeRepository, AuditService auditService) {
         super(ClassroomService.class.getName(), readRepository, writeRepository, auditService);
     }
 }

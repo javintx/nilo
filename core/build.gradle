@@ -1,16 +1,8 @@
 plugins {
     id "java"
-    id "io.spring.dependency-management"
-}
-
-dependencyManagement {
-    imports {
-        mavenBom(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
-    }
 }
 
 dependencies {
-    implementation project(":shared")
     compileOnly "org.projectlombok:lombok:1.18.22"
     annotationProcessor "org.projectlombok:lombok:1.18.22"
 
